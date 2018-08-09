@@ -60,10 +60,10 @@ output "public_ssh_key" {
 
 # Private IP Addresses
 output "master_private_ip_addresses" {
-  value = ["${google_compute_master.masters.*.network_interface.0.address}"]
+  value = ["${module.dcos-master-instances.*.network_interface.0.address}"]
 }
 
 # Public IP Addresses
 output "master_public_ip_addresses" {
-  value = ["${google_compute_master.masters.*.network_interface.0.access_config.0.assigned_nat_ip}"]
+  value = ["${module.dcos-master-instances.*.network_interface.0.access_config.0.assigned_nat_ip}"]
 }
