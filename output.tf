@@ -44,8 +44,8 @@ output "master_subnetwork_name" {
 }
 
 # Customer Provided Userdata
-output "gcp_user_data" {
-  value = "${var.gcp_user_data}"
+output "user_data" {
+  value = "${var.user_data}"
 }
 
 # SSH User
@@ -59,11 +59,11 @@ output "public_ssh_key" {
 }
 
 # Private IP Addresses
-output "master_private_ip_addresses" {
-  value = ["${module.dcos-master-instances.*.network_interface.0.address}"]
+output "private_ips" {
+  value = ["${module.dcos-master-instances.private_ips}"]
 }
 
 # Public IP Addresses
-output "master_public_ip_addresses" {
-  value = ["${module.dcos-master-instances.*.network_interface.0.access_config.0.assigned_nat_ip}"]
+output "public_ips" {
+  value = ["${module.dcos-master-instances.public_ips}"]
 }

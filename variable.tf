@@ -11,7 +11,9 @@ variable "region" {}
 variable "machine_type" {}
 
 # Element by zone list
-variable "zone_list" {}
+variable "zone_list" {
+  default = ""
+}
 
 # Source image to boot from
 variable "image" {}
@@ -26,7 +28,9 @@ variable "disk_size" {}
 variable "master_subnetwork_name" {}
 
 # Customer Provided Userdata
-variable "gcp_user_data" {}
+variable "user_data" {
+  default = ""
+}
 
 # SSH User
 variable "ssh_user" {}
@@ -44,9 +48,6 @@ variable "tags" {
 variable "hostname_format" {
   default = "%[3]s-masters%[1]d-%[2]s"
 }
-
-# Specify the cluster name all resources get named and tagged with
-variable "cluster_name" {}
 
 # The operating system to use. Instead of using your own AMI you could use a provided OS.
 variable "dcos_instance_os" {
