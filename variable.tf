@@ -4,15 +4,13 @@ variable "num_masters" {}
 # Cluster Name
 variable "cluster_name" {}
 
-# Region
-variable "region" {}
-
 # Instance Type
 variable "machine_type" {}
 
 # Element by zone list
 variable "zone_list" {
-  default = ""
+  type    = "list"
+  default = []
 }
 
 # Source image to boot from
