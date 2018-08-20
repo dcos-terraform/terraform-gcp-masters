@@ -1,5 +1,6 @@
 provider "google" {
   project = "${var.project_id}"
+  region      = "${var.region}"
 }
 
 module "dcos-tested-oses" {
@@ -12,6 +13,35 @@ module "dcos-tested-oses" {
 
   os = "${var.dcos_instance_os}"
 }
+
+
+#module "master-backend-service" {
+# source = "../terraform-gcp-backend-service"
+# # version = "0.0.0"
+#
+#  name_prefix             = "${var.name_prefix}"
+#target
+#network
+#ip_addresss
+#instances_self_link
+#dcos_role
+#
+#}
+#
+#
+#module "master-backend-service" {
+# source = "../terraform-gcp-backend-service"
+# # version = "0.0.0"
+#
+#  name_prefix             = "${var.name_prefix}"
+#target
+#network
+#ip_addresss
+#instances_self_link
+#dcos_role
+#
+#}
+
 
 module "dcos-master-instances" {
   #  source  = "dcos-terraform/instance/gcp"  #  version = "~> 0.0"
@@ -36,4 +66,5 @@ module "dcos-master-instances" {
   disk_size                = "${var.disk_size}"
   tags                     = "${var.tags}"
   project_id               = "${var.project_id}"
+  region      = "${var.region}"
 }
