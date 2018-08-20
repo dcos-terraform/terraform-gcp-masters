@@ -1,4 +1,6 @@
-provider "google" {}
+provider "google" {
+  project = "${var.project_id}"
+}
 
 module "dcos-tested-oses" {
   source  = "dcos-terraform/gcp-tested-oses/template"
@@ -12,14 +14,15 @@ module "dcos-tested-oses" {
 }
 
 module "dcos-master-instances" {
-  source  = "dcos-terraform/instance/gcp"
-  version = "~> 0.0"
+  #  source  = "dcos-terraform/instance/gcp"  #  version = "~> 0.0"
+
+  source = "../terraform-gcp-instance"
 
   providers = {
     google = "google"
   }
 
-  cluster_name             = "${var.cluster_name}"
+  name_prefix             = "${var.name_prefix}"
   hostname_format          = "${var.hostname_format}"
   num_instances            = "${var.num_masters}"
   image                    = "${coalesce(var.image, module.dcos-tested-oses.gcp_image_name)}"
@@ -32,4 +35,5 @@ module "dcos-master-instances" {
   disk_type                = "${var.disk_type}"
   disk_size                = "${var.disk_size}"
   tags                     = "${var.tags}"
+  project_id               = "${var.project_id}"
 }
