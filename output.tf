@@ -62,3 +62,18 @@ output "private_ips" {
 output "public_ips" {
   value = ["${module.dcos-master-instances.public_ips}"]
 }
+
+# Tested DCOS OSes Name
+output "dcos_instance_os" {
+  value = "${var.dcos_instance_os}"
+}
+
+# Master Node Self Link
+output "instances_self_link" {
+  value = ["${module.dcos-master-instances.instances_self_link}"]
+}
+
+# Master Node Target Pool Self link
+output "target_pool" {
+  value = ["${module.dcos-master-instances.target_pool}"]
+}

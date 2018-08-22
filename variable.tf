@@ -1,9 +1,3 @@
-# project id
-variable "project_id" {}
-
-# region
-variable "region" {}
-
 # number of instance
 variable "num_masters" {}
 
