@@ -4,6 +4,9 @@ variable "num_masters" {}
 # Cluster Name
 variable "name_prefix" {}
 
+# DCOS version
+variable "dcos_version" {}
+
 # Instance Type
 variable "machine_type" {}
 
