@@ -45,7 +45,7 @@ output "user_data" {
 
 # SSH User
 output "ssh_user" {
-  value = "${var.ssh_user}"
+  value = "${module.dcos-master-instances.ssh_user}"
 }
 
 # SSH Public Key
