@@ -34,13 +34,13 @@ data "google_compute_subnetwork" "a" {
 #}
 
 module "master-frontend-compute-firewall" {
-  source = "../terraform-gcp-compute-firewall"
-
-  # version = "0.0.0"
+  source  = "dcos-terraform/compute-firewall/gcp"
+  version = "~> 0.0"
 
   providers = {
     google = "google"
   }
+
   name_prefix         = "${var.name_prefix}"
   network             = "${data.google_compute_subnetwork.a.network}"
   instances_self_link = "${module.dcos-master-instances.instances_self_link}"
@@ -48,9 +48,8 @@ module "master-frontend-compute-firewall" {
 }
 
 module "dcos-master-instances" {
-  #  source  = "dcos-terraform/instance/gcp"  #  version = "~> 0.0"
-
-  source = "../terraform-gcp-instance"
+  source  = "dcos-terraform/instance/gcp"
+  version = "~> 0.0"
 
   providers = {
     google = "google"
