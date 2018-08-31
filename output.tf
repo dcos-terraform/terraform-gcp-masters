@@ -63,6 +63,11 @@ output "public_ips" {
   value = ["${module.dcos-master-instances.public_ips}"]
 }
 
+# GFE Public IP Address
+output "gfe.public_ip" {
+  value = "${module.master-frontend-compute-firewall.gfe.public_ip}"
+}
+
 # Tested DCOS OSes Name
 output "dcos_instance_os" {
   value = "${var.dcos_instance_os}"
