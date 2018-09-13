@@ -82,3 +82,8 @@ output "instances_self_link" {
 output "target_pool" {
   value = ["${module.dcos-master-instances.target_pool}"]
 }
+
+# Returns the ID of the prereq script (if images are not used)
+output "prereq_id" {
+  value = "${module.dcos-master-instances.prereq_id}"
+}
