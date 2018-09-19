@@ -33,8 +33,8 @@ data "google_compute_subnetwork" "a" {
 #  dcos_role           = "master"
 #}
 
-module "master-frontend-compute-firewall" {
-  source  = "dcos-terraform/compute-firewall/gcp"
+module "master-frontend-compute-forwarding-rule" {
+  source  = "dcos-terraform/compute-forwarding-rule/gcp"
   version = "~> 0.0"
 
   providers = {

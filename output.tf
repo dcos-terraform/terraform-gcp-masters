@@ -65,7 +65,7 @@ output "public_ips" {
 
 # GFE Public IP Address
 output "gfe.public_ip" {
-  value = "${module.master-frontend-compute-firewall.gfe.public_ip}"
+  value = "${module.master-frontend-compute-forwarding-rule.gfe.public_ip}"
 }
 
 # Tested DCOS OSes Name
