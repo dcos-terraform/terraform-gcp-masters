@@ -63,11 +63,6 @@ output "public_ips" {
   value = ["${module.dcos-master-instances.public_ips}"]
 }
 
-# GFE Public IP Address
-output "gfe.public_ip" {
-  value = "${module.master-frontend-compute-forwarding-rule.gfe.public_ip}"
-}
-
 # Tested DCOS OSes Name
 output "dcos_instance_os" {
   value = "${var.dcos_instance_os}"
@@ -76,11 +71,6 @@ output "dcos_instance_os" {
 # Master Node Self Link
 output "instances_self_link" {
   value = ["${module.dcos-master-instances.instances_self_link}"]
-}
-
-# Master Node Target Pool Self link
-output "target_pool" {
-  value = ["${module.master-frontend-compute-forwarding-rule.target_pool}"]
 }
 
 # Returns the ID of the prereq script (if images are not used)
