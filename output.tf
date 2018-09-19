@@ -80,7 +80,7 @@ output "instances_self_link" {
 
 # Master Node Target Pool Self link
 output "target_pool" {
-  value = ["${module.dcos-master-instances.target_pool}"]
+  value = ["${module.master-frontend-compute-forwarding-rule.target_pool}"]
 }
 
 # Returns the ID of the prereq script (if images are not used)
