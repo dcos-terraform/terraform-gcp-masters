@@ -21,8 +21,8 @@ variable "machine_type" {
 # Element by zone list
 variable "zone_list" {
   description = "zone list"
-  type    = "list"
-  default = []
+  type        = "list"
+  default     = []
 }
 
 # Source image to boot from
@@ -48,7 +48,7 @@ variable "master_subnetwork_name" {
 # Customer Provided Userdata
 variable "user_data" {
   description = "User data to be used on these instances (cloud-init)"
-  default = ""
+  default     = ""
 }
 
 # SSH User
@@ -64,18 +64,18 @@ variable "public_ssh_key" {
 # Add special tags to the resources created by this module
 variable "tags" {
   description = "Add custom tags to all resources"
-  type    = "list"
-  default = []
+  type        = "list"
+  default     = []
 }
 
 # Format the hostname inputs are index+1, region, name_prefix
 variable "hostname_format" {
   description = "Format the hostname inputs are index+1, region, cluster_name"
-  default = "%[2]s-masters-%[1]d"
+  default     = "%[2]s-masters-%[1]d"
 }
 
 # The operating system to use. Instead of using your own AMI you could use a provided OS.
 variable "dcos_instance_os" {
   description = "Operating system to use. Instead of using your own AMI you could use a provided OS."
-  default = "centos_7.4"
+  default     = "centos_7.4"
 }
