@@ -1,3 +1,4 @@
+[![Build Status](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-gcp-masters/job/master/badge/icon)](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-gcp-masters/job/master/)
 # DC/OS Instances
 
 Creates DC/OS Master intances
@@ -24,38 +25,45 @@ module "masters" {
 }
 ```
 
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| cluster_name | Cluster Name | string | - | yes |
-| customer_image | Source image to boot from | string | - | yes |
-| customer_userdata_rendered | Customer Provided Userdata | string | - | yes |
-| disk_size | Disk Size in GB | string | - | yes |
-| disk_type | Disk Type to Leverage | string | - | yes |
-| instance_subnetwork_name | Instance Subnetwork Name | string | - | yes |
-| machine_type | Instance Type | string | - | yes |
-| num_instances | Number of Instance | string | - | yes |
-| public_ssh_key | SSH Public Key | string | - | yes |
-| region | Region | string | - | yes |
-| ssh_user | SSH User | string | - | yes |
-| zone_list | Element by zone list | string | - | yes |
+| dcos_instance_os | Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `centos_7.4` | no |
+| dcos_version | Specifies which DC/OS version instruction to use. Options: 1.9.0, 1.8.8, etc. See dcos_download_path or dcos_version tree for a full list. | string | - | yes |
+| disk_size | disk size | string | - | yes |
+| disk_type | Disk Type to Leverage. The GCE disk type. Can be either 'pd-ssd', 'local-ssd', or 'pd-standard'. (optional) | string | - | yes |
+| hostname_format | Format the hostname inputs are index+1, region, cluster_name | string | `%[2]s-masters-%[1]d` | no |
+| image | image | string | - | yes |
+| machine_type | machine type | string | - | yes |
+| master_subnetwork_name | master subnetwork name | string | - | yes |
+| name_prefix | Cluster Name | string | - | yes |
+| num_masters | Specify the amount of masters. For redundancy you should have at least 3 | string | - | yes |
+| public_ssh_key | public ssh key | string | - | yes |
+| ssh_user | ssh user | string | - | yes |
+| tags | Add custom tags to all resources | list | `<list>` | no |
+| user_data | User data to be used on these instances (cloud-init) | string | `` | no |
+| zone_list | zone list | list | `<list>` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| cluster_name | Cluster Name |
-| customer_image | Source image to boot from |
-| customer_userdata_rendered | Customer Provided Userdata |
+| dcos_instance_os | Tested DCOS OSes Name |
 | disk_size | Disk Size in GB |
 | disk_type | Disk Type to Leverage |
-| instance_private_ip_addresses | Private IP Addresses |
-| instance_public_ip_addresses | Public IP Addresses |
-| instance_subnetwork_name | Instance Subnetwork Name |
+| image | Source image to boot from |
+| instances_self_link | Master Node Self Link |
 | machine_type | Instance Type |
-| num_instances | Number of Instance |
+| master_subnetwork_name | Instance Subnetwork Name |
+| name_prefix | Cluster Name |
+| num_masters | Number of Instance |
+| prereq_id | Returns the ID of the prereq script (if images are not used) |
+| private_ips | Private IP Addresses |
+| public_ips | Public IP Addresses |
 | public_ssh_key | SSH Public Key |
-| region | Region |
 | ssh_user | SSH User |
+| user_data | Customer Provided Userdata |
 | zone_list | Element by zone list |
+
