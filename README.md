@@ -37,6 +37,7 @@ module "masters" {
 | disk_type | Disk Type to Leverage. The GCE disk type. Can be either 'pd-ssd', 'local-ssd', or 'pd-standard'. (optional) | string | - | yes |
 | hostname_format | Format the hostname inputs are index+1, region, cluster_name | string | `%[2]s-masters-%[1]d` | no |
 | image | image | string | - | yes |
+| labels | Add custom labels to all resources | map | `<map>` | no |
 | machine_type | machine type | string | - | yes |
 | master_subnetwork_name | master subnetwork name | string | - | yes |
 | num_masters | Specify the amount of masters. For redundancy you should have at least 3 | string | - | yes |
