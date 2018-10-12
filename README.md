@@ -30,6 +30,7 @@ module "masters" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
+| cluster_name | Cluster Name | string | - | yes |
 | dcos_instance_os | Operating system to use. Instead of using your own AMI you could use a provided OS. | string | `centos_7.4` | no |
 | dcos_version | Specifies which DC/OS version instruction to use. Options: 1.9.0, 1.8.8, etc. See dcos_download_path or dcos_version tree for a full list. | string | - | yes |
 | disk_size | disk size | string | - | yes |
@@ -38,7 +39,6 @@ module "masters" {
 | image | image | string | - | yes |
 | machine_type | machine type | string | - | yes |
 | master_subnetwork_name | master subnetwork name | string | - | yes |
-| name_prefix | Cluster Name | string | - | yes |
 | num_masters | Specify the amount of masters. For redundancy you should have at least 3 | string | - | yes |
 | public_ssh_key | public ssh key | string | - | yes |
 | ssh_user | ssh user | string | - | yes |
