@@ -52,4 +52,6 @@ module "dcos-master-instances" {
   tags                     = "${var.tags}"
   dcos_instance_os         = "${var.dcos_instance_os}"
   dcos_version             = "${var.dcos_version}"
+
+  labels = "${var.labels}"
 }

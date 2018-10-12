@@ -79,3 +79,9 @@ variable "dcos_instance_os" {
   description = "Operating system to use. Instead of using your own AMI you could use a provided OS."
   default     = "centos_7.4"
 }
+
+variable "labels" {
+  description = "Add custom labels to all resources"
+  type        = "map"
+  default     = {}
+}
