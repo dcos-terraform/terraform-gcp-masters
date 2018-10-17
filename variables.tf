@@ -71,7 +71,7 @@ variable "tags" {
 # Format the hostname inputs are index+1, region, name_prefix
 variable "hostname_format" {
   description = "Format the hostname inputs are index+1, region, cluster_name"
-  default     = "%[2]s-masters-%[1]d"
+  default     = "%[3]s-master%[1]d-%[2]s"
 }
 
 # The operating system to use. Instead of using your own AMI you could use a provided OS.
