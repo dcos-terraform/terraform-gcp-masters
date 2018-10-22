@@ -19,8 +19,8 @@ variable "machine_type" {
 }
 
 # Element by zone list
-variable "Element by zone list" {
-  description = "zone list"
+variable "zone_list" {
+  description = "Element by zone list"
   type        = "list"
   default     = []
 }
