@@ -6,43 +6,43 @@ output "num_masters" {
 
 # Cluster Name
 output "name_prefix" {
-  description = "Cluster Name"
+  description = "Name of the DC/OS cluster"
   value       = "${var.cluster_name}"
 }
 
 # Instance Type
 output "machine_type" {
-  description = "machine type"
+  description = "Instance Type"
   value       = "${var.machine_type}"
 }
 
 # Element by zone list
 output "zone_list" {
-  description = "zone list"
+  description = "Element by zone list"
   value       = ["${var.zone_list}"]
 }
 
 # Source image to boot from
 output "image" {
-  description = "image"
+  description = "Source image to boot from"
   value       = "${var.image}"
 }
 
 # Disk Type to Leverage
 output "disk_type" {
-  description = "Disk Type to Leverage. The GCE disk type. Can be either 'pd-ssd', 'local-ssd', or 'pd-standard'. (optional)"
+  description = "Disk Type to Leverage"
   value       = "${var.disk_type}"
 }
 
 # Disk Size in GB
 output "disk_size" {
-  description = "disk size"
+  description = "Disk Size in GB"
   value       = "${var.disk_size}"
 }
 
 # Instance Subnetwork Name
 output "master_subnetwork_name" {
-  description = "master subnetwork name"
+  description = "Master Subnetwork Name"
   value       = "${var.master_subnetwork_name}"
 }
 
@@ -54,13 +54,13 @@ output "user_data" {
 
 # SSH User
 output "ssh_user" {
-  description = "ssh user"
+  description = "SSH User"
   value       = "${module.dcos-master-instances.ssh_user}"
 }
 
 # SSH Public Key
 output "public_ssh_key" {
-  description = "public ssh key"
+  description = "SSH Public Key"
   value       = "${var.public_ssh_key}"
 }
 
@@ -90,6 +90,6 @@ output "instances_self_link" {
 
 # Returns the ID of the prereq script (if images are not used)
 output "prereq_id" {
-  description = "prereq id"
+  description = "Prereq id used for dependency"
   value       = "${module.dcos-master-instances.prereq_id}"
 }
