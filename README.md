@@ -57,7 +57,7 @@ module "masters" {
 | instances_self_link | List of instance self links |
 | machine_type | Instance Type |
 | master_subnetwork_name | Master Subnetwork Name |
-| name_prefix | Name of the DC/OS cluster |
+| name_prefix | Cluster Name |
 | num_masters | Specify the amount of masters. For redundancy you should have at least 3 |
 | prereq_id | Prereq id used for dependency |
 | private_ips | List of private ip addresses created by this module |
