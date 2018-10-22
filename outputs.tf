@@ -6,7 +6,7 @@ output "num_masters" {
 
 # Cluster Name
 output "name_prefix" {
-  description = "Name of the DC/OS cluster"
+  description = "Cluster Name"
   value       = "${var.cluster_name}"
 }
 
