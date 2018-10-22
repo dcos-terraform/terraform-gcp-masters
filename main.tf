@@ -8,7 +8,7 @@
  *
  *```hcl
  * module "masters" {
- *   source = "dcos-terraform/instances/gcp"
+ *   source = "dcos-terraform/instance/gcp"
  *   version = "~> 0.0"
  *
  *   num_instance                   = "${var.instances_count}"
