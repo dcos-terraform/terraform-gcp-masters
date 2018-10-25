@@ -9,7 +9,7 @@
  *```hcl
  * module "masters" {
  *   source = "dcos-terraform/instance/gcp"
- *   version = "~> 0.0"
+ *   version = "~> 0.1.0"
  *
  *   num_instance                   = "${var.instances_count}"
  *   disk_size                      = "${var.gcp_instances_disk_size}"
@@ -31,7 +31,7 @@ provider "google" {}
 
 module "dcos-master-instances" {
   source  = "dcos-terraform/instance/gcp"
-  version = "~> 0.0"
+  version = "~> 0.1.0"
 
   providers = {
     google = "google"
