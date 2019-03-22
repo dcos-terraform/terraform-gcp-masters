@@ -27,14 +27,14 @@
  *```
  */
 
-provider "google" {}
+provider "google-beta" {}
 
 module "dcos-master-instances" {
   source  = "dcos-terraform/instance/gcp"
   version = "~> 0.1.0"
 
   providers = {
-    google = "google"
+    google-beta = "google-beta"
   }
 
   cluster_name             = "${var.cluster_name}"
