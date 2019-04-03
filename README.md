@@ -42,7 +42,7 @@ module "masters" {
 | master_subnetwork_name | Master Subnetwork Name | string | - | yes |
 | num_masters | Specify the amount of masters. For redundancy you should have at least 3 | string | - | yes |
 | public_ssh_key | SSH Public Key | string | - | yes |
-| ssh_user | SSH User | string | - | yes |
+| ssh_user | OS / SSH User | string | - | yes |
 | tags | Add custom tags to all resources | list | `<list>` | no |
 | user_data | User data to be used on these instances (cloud-init) | string | `` | no |
 | zone_list | Element by zone list | list | `<list>` | no |
@@ -60,11 +60,10 @@ module "masters" {
 | master_subnetwork_name | Master Subnetwork Name |
 | name_prefix | Cluster Name |
 | num_masters | Specify the amount of masters. For redundancy you should have at least 3 |
-| prereq_id | Prereq id used for dependency |
+| prereq-id | Prereq id used for dependency |
 | private_ips | List of private ip addresses created by this module |
 | public_ips | List of public ip addresses created by this module |
 | public_ssh_key | SSH Public Key |
-| ssh_user | SSH User |
+| os_user | OS / SSH User |
 | user_data | User data to be used on these instances (cloud-init) |
 | zone_list | Element by zone list |
-

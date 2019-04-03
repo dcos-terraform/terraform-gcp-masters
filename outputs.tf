@@ -43,8 +43,8 @@ output "user_data" {
   value       = "${var.user_data}"
 }
 
-output "ssh_user" {
-  description = "SSH User"
+output "os_user" {
+  description = "OS / SSH User"
   value       = "${module.dcos-master-instances.ssh_user}"
 }
 
@@ -73,7 +73,7 @@ output "instances_self_link" {
   value       = ["${module.dcos-master-instances.instances_self_link}"]
 }
 
-output "prereq_id" {
+output "prereq-id" {
   description = "Prereq id used for dependency"
   value       = "${module.dcos-master-instances.prereq_id}"
 }
