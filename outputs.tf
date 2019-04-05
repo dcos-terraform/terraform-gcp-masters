@@ -4,7 +4,7 @@ output "num_masters" {
 }
 
 output "name_prefix" {
-  description = "Cluster Name"
+  description = "Name Prefix"
   value       = "${var.cluster_name}"
 }
 
@@ -44,7 +44,7 @@ output "user_data" {
 }
 
 output "os_user" {
-  description = "OS / SSH User"
+  description = "The OS user to be used"
   value       = "${module.dcos-master-instances.ssh_user}"
 }
 
@@ -74,6 +74,6 @@ output "instances_self_link" {
 }
 
 output "prereq-id" {
-  description = "Prereq id used for dependency"
+  description = "Returns the ID of the prereq script (if user_data or ami are not used)"
   value       = "${module.dcos-master-instances.prereq_id}"
 }
