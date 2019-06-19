@@ -51,7 +51,6 @@ module "dcos-master-instances" {
   disk_size                = "${var.disk_size}"
   tags                     = "${var.tags}"
   dcos_instance_os         = "${var.dcos_instance_os}"
-  dcos_version             = "${var.dcos_version}"
 
   labels = "${var.labels}"
 }
