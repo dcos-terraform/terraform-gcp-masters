@@ -1,79 +1,79 @@
 output "num_masters" {
   description = "Specify the amount of masters. For redundancy you should have at least 3"
-  value       = "${var.num_masters}"
+  value       = var.num_masters
 }
 
 output "name_prefix" {
   description = "Name Prefix"
-  value       = "${var.cluster_name}"
+  value       = var.cluster_name
 }
 
 output "machine_type" {
   description = "Instance Type"
-  value       = "${var.machine_type}"
+  value       = var.machine_type
 }
 
 output "zone_list" {
   description = "Element by zone list"
-  value       = ["${var.zone_list}"]
+  value       = var.zone_list
 }
 
 output "image" {
   description = "Source image to boot from"
-  value       = "${var.image}"
+  value       = var.image
 }
 
 output "disk_type" {
   description = "Disk Type to Leverage The GCE disk type. Can be either 'pd-ssd', 'local-ssd', or 'pd-standard'. (optional)"
-  value       = "${var.disk_type}"
+  value       = var.disk_type
 }
 
 output "disk_size" {
   description = "Disk Size in GB"
-  value       = "${var.disk_size}"
+  value       = var.disk_size
 }
 
 output "master_subnetwork_name" {
   description = "Master Subnetwork Name"
-  value       = "${var.master_subnetwork_name}"
+  value       = var.master_subnetwork_name
 }
 
 output "user_data" {
   description = "User data to be used on these instances (cloud-init)"
-  value       = "${var.user_data}"
+  value       = var.user_data
 }
 
 output "os_user" {
   description = "The OS user to be used"
-  value       = "${module.dcos-master-instances.ssh_user}"
+  value       = module.dcos-master-instances.ssh_user
 }
 
 output "public_ssh_key" {
   description = "SSH Public Key"
-  value       = "${var.public_ssh_key}"
+  value       = var.public_ssh_key
 }
 
 output "private_ips" {
   description = "List of private ip addresses created by this module"
-  value       = ["${module.dcos-master-instances.private_ips}"]
+  value       = module.dcos-master-instances.private_ips
 }
 
 output "public_ips" {
   description = "List of public ip addresses created by this module"
-  value       = ["${module.dcos-master-instances.public_ips}"]
+  value       = module.dcos-master-instances.public_ips
 }
 
 output "dcos_instance_os" {
   description = "Operating system to use. Instead of using your own AMI you could use a provided OS."
-  value       = "${var.dcos_instance_os}"
+  value       = var.dcos_instance_os
 }
 
 output "instances_self_link" {
   description = "List of instance self links"
-  value       = ["${module.dcos-master-instances.instances_self_link}"]
+  value       = module.dcos-master-instances.instances_self_link
 }
 
 output "prereq-id" {
   description = "Returns the ID of the prereq script (if user_data or ami are not used)"
-  value       = "${module.dcos-master-instances.prereq_id}"
+  value       = module.dcos-master-instances.prereq_id
 }
