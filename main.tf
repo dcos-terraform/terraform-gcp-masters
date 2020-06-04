@@ -47,7 +47,7 @@ module "dcos-master-instances" {
   instance_subnetwork_name = var.master_subnetwork_name
   ssh_user                 = var.ssh_user
   public_ssh_key           = var.public_ssh_key
-  zone_list                = [var.zone_list]
+  zone_list                = var.zone_list
   disk_type                = var.disk_type
   disk_size                = var.disk_size
   tags                     = var.tags
