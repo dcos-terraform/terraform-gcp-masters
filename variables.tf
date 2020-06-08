@@ -12,7 +12,7 @@ variable "machine_type" {
 
 variable "zone_list" {
   description = "Element by zone list"
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
@@ -47,7 +47,7 @@ variable "public_ssh_key" {
 
 variable "tags" {
   description = "Add custom tags to all resources"
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
@@ -63,6 +63,7 @@ variable "dcos_instance_os" {
 
 variable "labels" {
   description = "Add custom labels to all resources"
-  type        = "map"
+  type        = map(string)
   default     = {}
 }
+

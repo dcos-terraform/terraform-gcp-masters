@@ -27,30 +27,31 @@
  *```
  */
 
-provider "google" {}
+provider "google" {
+}
 
 module "dcos-master-instances" {
   source  = "dcos-terraform/instance/gcp"
-  version = "~> 0.2.0"
+  version = "~> 0.3.0"
 
   providers = {
-    google = "google"
+    google = google
   }
 
-  cluster_name             = "${var.cluster_name}"
-  hostname_format          = "${var.hostname_format}"
-  num_instances            = "${var.num_masters}"
-  image                    = "${var.image}"
-  user_data                = "${var.user_data}"
-  machine_type             = "${var.machine_type}"
-  instance_subnetwork_name = "${var.master_subnetwork_name}"
-  ssh_user                 = "${var.ssh_user}"
-  public_ssh_key           = "${var.public_ssh_key}"
-  zone_list                = ["${var.zone_list}"]
-  disk_type                = "${var.disk_type}"
-  disk_size                = "${var.disk_size}"
-  tags                     = "${var.tags}"
-  dcos_instance_os         = "${var.dcos_instance_os}"
+  cluster_name             = var.cluster_name
+  hostname_format          = var.hostname_format
+  num_instances            = var.num_masters
+  image                    = var.image
+  user_data                = var.user_data
+  machine_type             = var.machine_type
+  instance_subnetwork_name = var.master_subnetwork_name
+  ssh_user                 = var.ssh_user
+  public_ssh_key           = var.public_ssh_key
+  zone_list                = var.zone_list
+  disk_type                = var.disk_type
+  disk_size                = var.disk_size
+  tags                     = var.tags
+  dcos_instance_os         = var.dcos_instance_os
 
-  labels = "${var.labels}"
+  labels = var.labels
 }
